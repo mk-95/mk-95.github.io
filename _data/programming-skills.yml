@@ -1,0 +1,11 @@
+- name: Python
+  percentage: 90
+  color: danger
+
+- name: cpp
+  percentage: 70
+  color:
+
+- name: matlab
+  percentage: 50
+  color: dark

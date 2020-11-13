@@ -1,0 +1,11 @@
+- name: Numerical Methods
+  percentage: 85
+  color: info
+
+- name: Machine Learning ( Tensorflow )
+  percentage: 80
+  color: 
+
+- name: Object Oriented Programming
+  percentage: 75
+  color: success
