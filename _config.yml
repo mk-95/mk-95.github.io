@@ -1,86 +1,46 @@
-### Site Settings ###
-title               : Mokbel Karam
-description         : >-
-                      ~The Only Failure is Never to Try~
-baseurl             : "/MokbelKaram"                     # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
-repository          : mk-95/mk-95     # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
-remote_theme        : YoussefRaafatNasry/portfolYOU
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: MatJek
+description: > # this means to ignore newlines until "baseurl:"
+  Material theme based on <a href="http://materializecss.com">Materialize.css</a> for jekyll sites
+baseurl: "/matjek"
+url: "https://shawnteoh.github.io"
+permalink: /:year/:month/:day/:title
+repository: ShawnTeoh/matjek
+paginate: 5
 
-### Plugins ###
-plugins:
-  - jemoji
+# MatJek specific configurations
+github_profile: "https://github.com/ShawnTeoh"
+user: "John Doe"
+user_email: "john@doe.com"
+contact_url: "https://goo.gl/tVljbV"
+google_tracking_id: "UA-96359860-1"
+google_site_verification: "UA-96359860-1"
+disqus_shortname: "matjek"
 
-
-### Navbar Settings ###
-nav_exclude:                                            # The following paths are excluded from navbar
-  - pages/tags.html
-  - pages/404.html
-  - pages/index.md
-
-
-### Author Info ###
-author:
-  name              : Mokbel Karam
-  image             : images/profile-pics/profile-pic-jazz-game.jpg
-# behance           : your_username
-# dribbble          : your_username
-  email             : karammokbel@gmail.com
-# facebook          : your_username
-  github            : mk-95
-# gitlab            : your_username
-# instagram         : your_username
-# kaggle            : your_username
-  linkedin          : Mokbel Karam
-# medium            : your_username
-# soundcloud        : your_username
-# spotify           : your_username
-# stackoverflow     : your_user_id
-# tumblr            : your_username.tumblr.com
-# twitch            : your_username
-  twitter           : mokbelkaram
-# vimeo             : your_username
-# youtube           : your_channel_name
-
-
-### Posts ###
-permalink: /blog/:title
-
-
-### Collections ###
-collections:
-  projects:
-    output: true
-    permalink: /projects/:name
-    
-
-### Disqus ###
-disqus: your-short-name-disqus                          # Your website Shortname on disqus
-
-
-### Analytics ###
-analytics:
-  enabled: false                                        # Set true to enable analytics
-  google:
-    tracking_id: your-google-tracking-id
-
-
-### Defaults for collections ###
-defaults:
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "page"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      comments: false                                   # Set to true to enable disqus comments
-
-### Exclude from processing ###
+# Build settings
+markdown: kramdown
+gems:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
 exclude:
-  - README.md
-  - CONTRIBUTING.md
-  - LICENSE
-  - "*.log"
+  - Gemfile
+  - Gemfile.lock
+sass:
+  style: compressed
+future: true
