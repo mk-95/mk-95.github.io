@@ -1,0 +1,16 @@
+- title: Home
+  url: /index/
+- title: About
+  url: /about/
+- title: Publications
+  url: /Publications/
+# - title: Software
+#   url: /software/
+- title: Resume
+  url: /resume/
+- title: More
+  sublinks:
+    - title: FAQ
+      url: /faq/
+    - title: Docs
+      url: /docs/
