@@ -4,7 +4,7 @@ title: Low-Cost Runge-Kutta Integrators for Incompressible Flow Simulations
 tags: [Navier-Stokes,Projection-Based Solvers,Low-Cost]
 ---
 
-Achieving faster fluid simulations by dropping the pressure projections at the intermediate stage of Runge-Kutta integrators 
+Achieving faster incompressible fluid simulations by dropping the pressure projections at the intermediate stages of Runge-Kutta integrators 
 
 **Abstract**
 
