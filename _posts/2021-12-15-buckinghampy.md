@@ -1,6 +1,6 @@
 ---
 layout: post
-title: BuckinghamPy
+title: BuckinghamPy, A Python software for dimensional analysis
 categories: misc
 tags: [dimensional analysis, Buckingham Pi, similarity]
 ---
