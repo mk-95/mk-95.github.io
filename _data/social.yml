@@ -4,3 +4,9 @@
 - title: GitHub
   url: https://github.com/mk-95
   icon: fab fa-github
+- title: Google Scholar
+  url: https://scholar.google.com/citations?user=pPHOLesAAAAJ&hl=en
+  icon: fab fa-google
+- title: Research Gate
+  url: https://www.researchgate.net/profile/Mokbel-Karam
+  icon: fab fa-researchgate
