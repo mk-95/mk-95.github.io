@@ -3,7 +3,10 @@ layout: page
 title: Resume
 permalink: /resume/
 ---
-
+<div style="text-align: right">
+<form action="https://drive.google.com/file/d/1_C6O-JbZZ5_ZEu34-bx9BrSZEvQnTQNS/view?usp=sharing" method="get" target="_blank"><button type="submit">Download as PDF</button></form>
+</div>
+<br/>
 **Research Interests**
 
 ------------------------------------------------------------------------
@@ -63,7 +66,7 @@ for the Navier-Stokes Equations, 2021, AIAA Journal (under review).
 
 **2021** &emsp; **Mokbel Karam,** and Tony Saad, Higher Order Pressure Approximations
 for Projection-Based Navier-Stokes Solvers, 2021, Journal of Computational
-Physics (In Press, 110925, [https://doi.org/10.1016/j.jcp.2021.110925](https://doi.org/10.1016/j.jcp.2021.110925)).
+Physics (Volume 452, 110925, [https://doi.org/10.1016/j.jcp.2021.110925](https://doi.org/10.1016/j.jcp.2021.110925)).
 
 **2021** &emsp; **Mokbel Karam,** and Tony Saad, BuckinghamPy: A Python Software for
 Dimensional Analysis, 2021, SoftwareX (Volume 16, 100851,
