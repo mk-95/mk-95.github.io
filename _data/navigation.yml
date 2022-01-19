@@ -2,15 +2,17 @@
   url: /
 - title: About
   url: /about/
+- title: Research Statement
+  url: /research_statement/
 - title: Publications
   url: /Publications/
 # - title: Software
 #   url: /software/
 - title: Resume
   url: /resume/
-- title: More
-  sublinks:
-    - title: FAQ
-      url: /faq/
-    - title: Docs
-      url: /docs/
+# - title: More
+  # sublinks:
+  #   - title: FAQ
+  #     url: /faq/
+  #   - title: Docs
+  #     url: /docs/
