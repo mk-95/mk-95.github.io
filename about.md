@@ -3,11 +3,9 @@ layout: page
 title: About
 permalink: /about/
 ---
-Hi I am Mokbel Karam, I am a 5th year Ph.D. student at the University of Utah Chemical Engineering Department. 
-Also, I have a mechanical engineering degree from Notre Dame University Lebanon.
-This site is a little corner of the web where I post my accomplishements, tutorials, projects, etc.   
+Hi, I am Mokbel Karam; I am a 5th year Ph.D. student at the University of Utah Chemical Engineering Department. Also, I have a mechanical engineering degree from Notre Dame University in Lebanon. This site is a little corner of the web where I post my accomplishments, tutorials, projects, etc.
 
-Also, in my free time I like to take some pictures. Here are some eye candy!
+Also, in my free time, I like to take some pictures. Here is some eye candy!
 
 <script src="https://cdn.jsdelivr.net/npm/publicalbum@latest/embed-ui.min.js" async></script>
 <div class="pa-carousel-widget" style="width:100%; height:480px; display:none;"
