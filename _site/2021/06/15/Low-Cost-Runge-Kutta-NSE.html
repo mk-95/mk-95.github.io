@@ -7,25 +7,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Mitigation Strategies for Airborne Disease Transmission in Orchestras Using Computational Fluid Dynamics (Covid-19) | Mokbel Karam</title>
+<title>Low-Cost Runge-Kutta Integrators for Incompressible Flow Simulations | Mokbel Karam</title>
 <meta name="generator" content="Jekyll v3.9.1" />
-<meta property="og:title" content="Mitigation Strategies for Airborne Disease Transmission in Orchestras Using Computational Fluid Dynamics (Covid-19)" />
+<meta property="og:title" content="Low-Cost Runge-Kutta Integrators for Incompressible Flow Simulations" />
 <meta name="author" content="Mokbel Karam" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="How we helped Utah Symphony during the COVID-19 pandemic" />
-<meta property="og:description" content="How we helped Utah Symphony during the COVID-19 pandemic" />
-<link rel="canonical" href="http://localhost:4000/misc/2021/07/11/covid-19.html" />
-<meta property="og:url" content="http://localhost:4000/misc/2021/07/11/covid-19.html" />
+<meta name="description" content="Achieving faster incompressible fluid simulations by dropping the pressure projections at the intermediate stages of Runge-Kutta integrators" />
+<meta property="og:description" content="Achieving faster incompressible fluid simulations by dropping the pressure projections at the intermediate stages of Runge-Kutta integrators" />
+<link rel="canonical" href="http://localhost:4000/2021/06/15/Low-Cost-Runge-Kutta-NSE.html" />
+<meta property="og:url" content="http://localhost:4000/2021/06/15/Low-Cost-Runge-Kutta-NSE.html" />
 <meta property="og:site_name" content="Mokbel Karam" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-07-11T00:00:00+00:00" />
+<meta property="article:published_time" content="2021-06-15T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Mitigation Strategies for Airborne Disease Transmission in Orchestras Using Computational Fluid Dynamics (Covid-19)" />
+<meta property="twitter:title" content="Low-Cost Runge-Kutta Integrators for Incompressible Flow Simulations" />
 <meta name="twitter:site" content="@mokbelkaram" />
 <meta name="twitter:creator" content="@Mokbel Karam" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"description":"How we helped Utah Symphony during the COVID-19 pandemic","@type":"BlogPosting","datePublished":"2021-07-11T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/misc/2021/07/11/covid-19.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Mokbel Karam"},"url":"http://localhost:4000/misc/2021/07/11/covid-19.html","author":{"@type":"Person","name":"Mokbel Karam"},"headline":"Mitigation Strategies for Airborne Disease Transmission in Orchestras Using Computational Fluid Dynamics (Covid-19)","dateModified":"2021-07-11T00:00:00+00:00","@context":"https://schema.org"}</script>
+{"description":"Achieving faster incompressible fluid simulations by dropping the pressure projections at the intermediate stages of Runge-Kutta integrators","@type":"BlogPosting","datePublished":"2021-06-15T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2021/06/15/Low-Cost-Runge-Kutta-NSE.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Mokbel Karam"},"url":"http://localhost:4000/2021/06/15/Low-Cost-Runge-Kutta-NSE.html","author":{"@type":"Person","name":"Mokbel Karam"},"headline":"Low-Cost Runge-Kutta Integrators for Incompressible Flow Simulations","dateModified":"2021-06-15T00:00:00+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -161,63 +161,36 @@
 
   <header class="post-header">
 
-    <h1 class="post-title p-name" itemprop="name headline">Mitigation Strategies for Airborne Disease Transmission in Orchestras Using Computational Fluid Dynamics (Covid-19)</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2021-07-11T00:00:00+00:00" itemprop="datePublished">
-        Jul 11, 2021
+    <h1 class="post-title p-name" itemprop="name headline">Low-Cost Runge-Kutta Integrators for Incompressible Flow Simulations</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2021-06-15T00:00:00+00:00" itemprop="datePublished">
+        Jun 15, 2021
       </time></p>
 
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>How we helped Utah Symphony during the COVID-19 pandemic</p>
+    <p>Achieving faster incompressible fluid simulations by dropping the pressure projections at the intermediate stages of Runge-Kutta integrators</p>
 
 <p><strong>Abstract</strong></p>
 
-<p>The COVID-19 pandemic forced performing arts groups to cancel shows and entire seasons due to safety concerns for the audience and performers. It is unclear to what extent aerosols generated by wind instruments contribute to exposure because their fate is dependent on the airflow onstage. We use transient, second-order accurate computational fluid dynamics (CFD) simulations and quantitative microbial risk assessment to estimate aerosol concentrations and the associated risk and assess strategies to mitigate exposure in two distinct concert venues. Mitigation strategies involved rearranging musicians and altering the airflow by changing HVAC settings, opening doors, and introducing flow-directing geometries. Our results indicate that the proposed mitigation strategies can reduce aerosol concentrations in the breathing zone by a factor of 100, corresponding to a similar decrease in the probability of infection.</p>
+<p>We derive a novel class of low-cost explicit Runge-Kutta (RK) methods for the incompressible Navier-Stokes equations using pressure-based methods. Pressure-based methods require the solution of a Poisson equation for the pressure which is subsequently used to enforce mass conservation. In most cases, the Poisson equation is an expensive proposition, especially in the context of high-performance computing, where the cost of data transfers for global linear solvers can reduce scalability. In addition, when coupled with an RK scheme to achieve high accuracy in time, pressure-based methods require a Poisson solve at each intermediate RK stage, rendering pressure-based methods quite costly on large supercomputers. The proposed time integrators eliminate the need for a pressure-Poisson equation at intermediate stages while retaining formal order of accuracy. This is accomplished by deriving rational interpolants of the pressure from previous timesteps while preserving formal order of accuracy. For example, we will show that only one pressure Poisson equation is needed for second, third, and fourth-order Runge-Kutta schemes. We also find that while the proposed schemes impact stability, overall cost savings of up to 40% are still achievable over a wide range of Reynolds numbers. All the proposed integrators result in the same stability regions for cell Reynolds numbers of up to 10 while producing lower stability for larger cell Reynolds numbers.</p>
 
 <ul>
   <li>
-    <p>Main Article in Science Advances: <a href="https://doi.org/10.1126/sciadv.abg4511">https://doi.org/10.1126/sciadv.abg4511</a>.</p>
+    <p>Main article in Journal of Computational Physics: <a href="https://doi.org/10.1016/j.jcp.2021.110518">https://doi.org/10.1016/j.jcp.2021.110518</a></p>
   </li>
   <li>
-    <p>The following videos are available on this <a href="https://www.youtube.com/watch?v=QNAsvuU9HLA&amp;list=PLEaLl6Sf-KIA8zbsHn9jzu0HdrOBNJe2y">youtube channel</a>.</p>
-  </li>
-  <li>
-    <p>Cite as: <em>Hedworth, H. A., Karam, M., McConnell, J., Sutherland, J. C., &amp; Saad, T. (2021). Mitigation strategies for airborne disease transmission in orchestras using computational fluid dynamics. Science Advances, 7(26), eabg4511.</em></p>
+    <p>Cite as: <em>Karam, M., Sutherland, J. C., &amp; Saad, T. (2021). Low-cost Runge-Kutta integrators for incompressible flow simulations. Journal of Computational Physics, 110518.</em></p>
   </li>
 </ul>
 
-<h3 id="baseline-aerosol-concentration-for-abravanel-hall-with-the-original-orchestra-seating-arrangement">Baseline Aerosol Concentration For Abravanel Hall With The Original Orchestra Seating Arrangement</h3>
+<h3 id="summary-slides">Summary Slides</h3>
 <hr />
-
-<iframe width="591" height="335" src="https://www.youtube.com/embed/hAiNfGs9ULo?PLEaLl6Sf-KIA8zbsHn9jzu0HdrOBNJe2y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-
-<h3 id="aerosol-concentration-for-abravanel-hall-with-the-new-suggested-orchestra-seating-arrangement">Aerosol Concentration For Abravanel Hall With The New Suggested Orchestra Seating Arrangement</h3>
-<hr />
-
-<iframe width="591" height="335" src="https://www.youtube.com/embed/89rbN4dJaKs?PLEaLl6Sf-KIA8zbsHn9jzu0HdrOBNJe2y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-
-<h3 id="side-by-side-aerosol-concentration-view-the-original-and-the-new-suggested-seating-arrangement">Side By Side Aerosol Concentration View The Original And The New Suggested Seating Arrangement</h3>
-<hr />
-
-<iframe width="591" height="335" src="https://www.youtube.com/embed/6b_UuCuJfkU?PLEaLl6Sf-KIA8zbsHn9jzu0HdrOBNJe2y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSOUD8mv0wq4rnCeo5H8q_rDTLyq0l1lLpo6rbfiPORj8e5Xh8y-w7Tvxh4beHQaEwXMChz4xg08jGo/embed?start=true&amp;loop=true&amp;delayms=5000" frameborder="0" width="700" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
   </div>
 
   <footer class="post-footer">
-    
-      <div class="post-meta">
-        <i class="fas fa-folder"></i>
-        <ul class="post-taxonomies post-categories">
-          
-          
-            <li class="post-category">
-              
-              <a href="/categories/#misc">misc</a>
-            </li>
-          
-        </ul>
-      </div>
     
 
     
@@ -228,17 +201,17 @@
           
             <li class="post-tag">
               
-              <a href="/tags/#cfd">cfd</a>
+              <a href="/tags/#low-cost">low-cost</a>
             </li>
           
             <li class="post-tag">
               
-              <a href="/tags/#covid-19">covid-19</a>
+              <a href="/tags/#navier-stokes">navier-stokes</a>
             </li>
           
             <li class="post-tag">
               
-              <a href="/tags/#wasatch">wasatch</a>
+              <a href="/tags/#projection-based-solvers">projection-based-solvers</a>
             </li>
           
         </ul>
@@ -247,20 +220,20 @@
 
     <nav class="post-pagination" role="navigation">
       
-        <a class="post-previous" href="/2021/06/15/Low-Cost-Runge-Kutta-NSE.html">
+        <a class="post-previous" href="/2020/07/11/PyModPDE.html">
           <h4 class="post-pagination-label">Prev</h4>
           <span class="post-pagination-title">
-            <i class="fas fa-arrow-left"></i> Low-Cost Runge-Kutta Integrators for Incompressible Flow Simulations
+            <i class="fas fa-arrow-left"></i> PyModPDE, A python software for modified equation analysis
 
           </span>
         </a>
       
 
       
-        <a class="post-next" href="/misc/2021/12/15/buckinghampy.html">
+        <a class="post-next" href="/misc/2021/07/11/covid-19.html">
           <h4 class="post-pagination-label">Next</h4>
           <span class="post-pagination-title">
-            BuckinghamPy, A Python software for dimensional analysis
+            Mitigation Strategies for Airborne Disease Transmission in Orchestras Using Computational Fluid Dynamics (Covid-19)
  <i class="fas fa-arrow-right"></i>
           </span>
         </a>

@@ -7,25 +7,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>BuckinghamPy | Mokbel Karam</title>
+<title>High-order pressure estimates for projection-based Navier-Stokes solvers | Mokbel Karam</title>
 <meta name="generator" content="Jekyll v3.9.1" />
-<meta property="og:title" content="BuckinghamPy" />
+<meta property="og:title" content="High-order pressure estimates for projection-based Navier-Stokes solvers" />
 <meta name="author" content="Mokbel Karam" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Python code that implements the Buckingham-Pi theorem and return all sets of dimensionless groups." />
-<meta property="og:description" content="Python code that implements the Buckingham-Pi theorem and return all sets of dimensionless groups." />
-<link rel="canonical" href="http://localhost:4000/misc/2016/05/19/buckinghampy.html" />
-<meta property="og:url" content="http://localhost:4000/misc/2016/05/19/buckinghampy.html" />
+<meta name="description" content="Explaining how to construct high-order instantaneous pressures for Navier-Stokes solvers." />
+<meta property="og:description" content="Explaining how to construct high-order instantaneous pressures for Navier-Stokes solvers." />
+<link rel="canonical" href="http://localhost:4000/2022/01/01/High-order-pressure-estimates-for-navier-stokes-solvers.html" />
+<meta property="og:url" content="http://localhost:4000/2022/01/01/High-order-pressure-estimates-for-navier-stokes-solvers.html" />
 <meta property="og:site_name" content="Mokbel Karam" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-05-19T00:00:00+00:00" />
+<meta property="article:published_time" content="2022-01-01T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="BuckinghamPy" />
+<meta property="twitter:title" content="High-order pressure estimates for projection-based Navier-Stokes solvers" />
 <meta name="twitter:site" content="@mokbelkaram" />
 <meta name="twitter:creator" content="@Mokbel Karam" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"description":"Python code that implements the Buckingham-Pi theorem and return all sets of dimensionless groups.","@type":"BlogPosting","datePublished":"2016-05-19T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/misc/2016/05/19/buckinghampy.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Mokbel Karam"},"url":"http://localhost:4000/misc/2016/05/19/buckinghampy.html","author":{"@type":"Person","name":"Mokbel Karam"},"headline":"BuckinghamPy","dateModified":"2016-05-19T00:00:00+00:00","@context":"https://schema.org"}</script>
+{"description":"Explaining how to construct high-order instantaneous pressures for Navier-Stokes solvers.","@type":"BlogPosting","datePublished":"2022-01-01T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/01/01/High-order-pressure-estimates-for-navier-stokes-solvers.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Mokbel Karam"},"url":"http://localhost:4000/2022/01/01/High-order-pressure-estimates-for-navier-stokes-solvers.html","author":{"@type":"Person","name":"Mokbel Karam"},"headline":"High-order pressure estimates for projection-based Navier-Stokes solvers","dateModified":"2022-01-01T00:00:00+00:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -102,21 +102,15 @@
       </label>
 
       <ul class="trigger">
-              <li><a class="" href="/index/">Home</a></li>
+              <li><a class="" href="/">Home</a></li>
             
               <li><a class="" href="/about/">About</a></li>
+            
+              <li><a class="" href="/research_statement/">Research Statement</a></li>
             
               <li><a class="" href="/Publications/">Publications</a></li>
             
               <li><a class="" href="/resume/">Resume</a></li>
-            
-              <li class="dropdown" href="#">
-                <a href="javascript:void(0)" class="dropbtn">More</a>
-                <div class="dropdown-content">
-                    <a class="" href="/faq/">FAQ</a>
-                    <a class="" href="/docs/">Docs</a>
-                </div>
-              </li>
             </ul>
     </nav>
   
@@ -152,6 +146,10 @@
           <a class="social-icon" href="https://twitter.com/mokbelkaram"><i class="fab fa-twitter fa-2x" title="Twitter"></i></a>
         </li><li>
           <a class="social-icon" href="https://github.com/mk-95"><i class="fab fa-github fa-2x" title="GitHub"></i></a>
+        </li><li>
+          <a class="social-icon" href="https://scholar.google.com/citations?user=pPHOLesAAAAJ&hl=en"><i class="fab fa-google fa-2x" title="Google Scholar"></i></a>
+        </li><li>
+          <a class="social-icon" href="https://www.researchgate.net/profile/Mokbel-Karam"><i class="fab fa-researchgate fa-2x" title="Research Gate"></i></a>
         </li>
     </ul>
   </div>
@@ -163,91 +161,40 @@
 
   <header class="post-header">
 
-    <h1 class="post-title p-name" itemprop="name headline">BuckinghamPy</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2016-05-19T00:00:00+00:00" itemprop="datePublished">
-        May 19, 2016
+    <h1 class="post-title p-name" itemprop="name headline">High-order pressure estimates for projection-based Navier-Stokes solvers</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2022-01-01T00:00:00+00:00" itemprop="datePublished">
+        Jan 1, 2022
       </time></p>
 
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Python code that implements the Buckingham-Pi theorem and return all sets of dimensionless groups.</p>
+    <p>Explaining how to construct high-order instantaneous pressures for Navier-Stokes solvers.</p>
 
-<p><a href="https://mybinder.org/v2/gh/saadgroup/BuckinghamPy/master?filepath=buckinghampy-gui.ipynb"><img src="https://mybinder.org/badge_logo.svg" alt="Binder" /></a> (GUI App)</p>
+<p><strong>Abstract</strong></p>
 
-<p><a href="https://mybinder.org/v2/gh/saadgroup/BuckinghamPy/master?filepath=examples.ipynb"><img src="https://mybinder.org/badge_logo.svg" alt="Binder" /></a> (Script)</p>
-
-<p>The methodology is discussed in the original artictle: <a href="https://doi.org/10.1016/j.softx.2021.100851">https://doi.org/10.1016/j.softx.2021.100851</a></p>
-
-<p>github repo: <a href="https://github.com/saadgroup/BuckinghamPy">https://github.com/saadgroup/BuckinghamPy</a></p>
-
-<p>Cite as: Karam, M., &amp; Saad, T. (2021). BuckinghamPy: A Python software for dimensional analysis. SoftwareX, 16, 100851.</p>
-
-<h2 id="installation">Installation</h2>
-<hr />
-<p>Clone the package from the github repository into the current directory</p>
-<pre><code class="language-buildoutcfg">git clone https://github.com/saadgroup/BuckinghamPy.git . 
-</code></pre>
-<p>Use <code class="language-plaintext highlighter-rouge">pip</code> tool to install the package in the active python evironment</p>
-<pre><code class="language-buildoutcfg">pip install .
-</code></pre>
-<h2 id="example">Example</h2>
-
-<p>Consider a fluid with density R and viscosity V, pumped in a centrifugal pump with power input P, a volume flow rate Q, an impeller diameter E, and a rotational rate G.</p>
-
-<p>The homogeneous function that relates all these variables is: f(R, V, P, Q, E, G) = 0</p>
-
-<p>Using the fundamental units (M, L, T), find all the sets of dimensionless terms with the power input P being part of only one dimensionless term per set.</p>
-
-<p>Using BuckinghamPy, we execute the following code:</p>
-
-<pre><code class="language-buildoutcfg">from buckinghampy import BuckinghamPi
-
-Example = BuckinghamPi()
-Example.add_variable(name='R', dimensions='M/L^(3)')
-Example.add_variable(name='P', dimensions='M*L^(2)/(T^3)', non_repeating=True)
-Example.add_variable(name='V', dimensions='M/(T*L)')
-Example.add_variable(name='Q', dimensions='L^(3)/T')
-Example.add_variable(name='E', dimensions='L')
-Example.add_variable(name='G', dimensions='1/T')
-
-Example.generate_pi_terms()
-
-Example.print_all()
-</code></pre>
-<p><img src="/images/software/readme_result.png" alt="Latex Rendered Results" /></p>
-
-<p>or you can import the graphic user interface only in a Jupyter cell</p>
-<pre><code class="language-buildoutcfg">from buckinghampy import BuckinghamPiGui
-
-GUI=BuckinghamPiGui()
-</code></pre>
-
-<hr />
-<h2 id="see-also">See Also</h2>
+<p>We derive high-order estimates of the instantaneous pressure for projection-type solvers of the incompressible Navier-Stokes equations. Projection methods play a central role in incompressible and low-Mach fluid flow simulations. However, these methods are known to produce a first-order instantaneous pressure at the end of a timestep, even when used with high-order integrators such as Runge-Kutta or Adams-Bashforth methods. In many instances, a high-order pressure is needed when the application demands it, such as turbulent aerodynamic flows, fluid-structure interaction, membrane filtration, and pressure-dependent boundary conditions. The common strategy to circumvent this limitation is to perform a so-called “post-processing” projection which results in an instantaneous pressure of the same order as the time integrator. However, this additional projection adds more cost to a simulation, especially in the context of high-performance computing. For example, in a third-order Runge-Kutta integration, requiring a post-processing projection increases the computational cost by 33%. Therefore, it is desirable to find high-order consistent estimates for the instantaneous pressure without the need for a post-processing projection. In this paper, we introduce a novel approximation to compute high-order estimates for the instantaneous pressure for arbitrary high-order time integrators, without the need for a post-processing projection. Our proposed approximations are independent of the time integration methodology or boundary conditions. We validate our results using various implicit and explicit integrators on different benchmark problems with periodic and time-dependent boundary conditions.</p>
 
 <ul>
   <li>
-    <h2 id="documentation"><a href="https://htmlpreview.github.io/?https://github.com/saadgroup/BuckinghamPy/blob/master/doc/buckinghampi.m.html">Documentation</a></h2>
+    <p>Main article in Journal of Computational Physics: <a href="https://doi.org/10.1016/j.jcp.2021.110925">https://doi.org/10.1016/j.jcp.2021.110925</a></p>
+  </li>
+  <li>
+    <p>Cite as: <em>Karam, M., &amp; Saad, T. (2021). High-order pressure estimates for projection-based Navier-Stokes solvers. Journal of Computational Physics, 110925.</em></p>
   </li>
 </ul>
+
+<h3 id="explainer-video-by-prof-tony-saad">Explainer Video By Prof. Tony Saad</h3>
+<hr />
+<iframe width="700" height="450" src="https://www.youtube.com/embed/c54oATeNkdo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="summary-slides">Summary Slides</h3>
+<hr />
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSZraf11xWCun4DKR7qzeRahnBpTsP-w7d1HxCel2BK8M_3UN_kb2h_8YSxq8ROLhA9WX3PMh97efQw/embed?start=false&amp;loop=false&amp;delayms=5000" frameborder="0" width="700" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
   </div>
 
   <footer class="post-footer">
-    
-      <div class="post-meta">
-        <i class="fas fa-folder"></i>
-        <ul class="post-taxonomies post-categories">
-          
-          
-            <li class="post-category">
-              
-              <a href="/categories/#misc">misc</a>
-            </li>
-          
-        </ul>
-      </div>
     
 
     
@@ -258,17 +205,17 @@ GUI=BuckinghamPiGui()
           
             <li class="post-tag">
               
-              <a href="/tags/#buckingham-pi">buckingham-pi</a>
+              <a href="/tags/#high-order">high-order</a>
             </li>
           
             <li class="post-tag">
               
-              <a href="/tags/#dimensional-analysis">dimensional-analysis</a>
+              <a href="/tags/#navier-stokes">navier-stokes</a>
             </li>
           
             <li class="post-tag">
               
-              <a href="/tags/#similarity">similarity</a>
+              <a href="/tags/#projection-based-solvers">projection-based-solvers</a>
             </li>
           
         </ul>
@@ -277,23 +224,15 @@ GUI=BuckinghamPiGui()
 
     <nav class="post-pagination" role="navigation">
       
-        <a class="post-previous" href="/2016/01/11/PyModPDE.html">
+        <a class="post-previous" href="/misc/2021/12/15/buckinghampy.html">
           <h4 class="post-pagination-label">Prev</h4>
           <span class="post-pagination-title">
-            <i class="fas fa-arrow-left"></i> PyModPDE
+            <i class="fas fa-arrow-left"></i> BuckinghamPy, A Python software for dimensional analysis
 
           </span>
         </a>
       
 
-      
-        <a class="post-next" href="/misc/2021/07/11/covid-19.html">
-          <h4 class="post-pagination-label">Next</h4>
-          <span class="post-pagination-title">
-            Mitigation Strategies for Airborne Disease Transmission in Orchestras Using Computational Fluid Dynamics (Covid-19)
- <i class="fas fa-arrow-right"></i>
-          </span>
-        </a>
       
     </nav>
   </footer>
@@ -311,7 +250,7 @@ GUI=BuckinghamPiGui()
       
       
       
-      <p>Copyright © 2016&nbsp;-&nbsp;2021 Mokbel Karam; All rights reserved.</p>
+      <p>Copyright © 2020&nbsp;-&nbsp;2022 Mokbel Karam; All rights reserved.</p>
       
     </div>
     <p>
