@@ -32,7 +32,7 @@ This relatively high cost of the pressure is no surprise because the pressure fi
 So how do we reduce the cost of CFD simulations? It seems rational to first tackle the most expensive part - the pressure field.
 Based on anecdotal evidence, I asked the question: what happens if we do not compute the pressure and instead replace it with a cheap approximation? 
 I then tested the hypothesis that {\bf expensive calculations of the pressure can be replaced with cheap approximations without sacrificing accuracy and mass conservation}.
-My four-year investigation into this question resulted in a new mathematical framework that untangles the role of the pressure in the numerical simulation of the Navier-Stokes equations resulting in new time integration methods that are 40% cheaper than conventional methods[^Karam_Sutherland_Saad_2021] [^Karam_Saad_2021] [^karam_saad_generalization_2022] [^karam_saad_aiaa_2021]. 
+My four-year investigation into this question resulted in a new mathematical framework that untangles the role of the pressure in the numerical simulation of the Navier-Stokes equations resulting in new time integration methods that are 40% cheaper than conventional methods[^Karam_Sutherland_Saad_2021] [^Karam_Saad_2021] [^karam_saad_aiaa_2021]. 
 Using the newly proposed methods with the COVID-19 simulations would have saved us 200,000 CPU hours or a cost of \$30,000 dollars, while producing identical results with the same accuracy.
 
 Today, despite the immense advances in user-friendly technologies, CFD is still considered to be within the realm of the well-versed in the field.
@@ -43,7 +43,7 @@ Using the knowledge I accumulated during my doctoral research, I plan to continu
 
 [^fn1]: This study was featured in the following media sources: [The New York Times](https://www.nytimes.com/2021/06/23/health/coronavirus-orchestra.html), [New Scientist](https://www.newscientist.com/article/2281794-turning-orchestras-inside-out-could-lower-risk-of-spreading-covid-19/) , [Science News](https://www.sciencenews.org/article/coronavirus-covid-musicians-relocating-reduce-risk-concerts), and [The Student Innovation Report 2021](https://lassonde.utah.edu/keeping-the-symphony-open/) at the University of Utah.
 
-[^hayden_karam]: Hayden A. Hedworth**, Mokbel Karam,** Josh McConnell, James C. Sutherland, and Tony Saad, Mitigation Strategies for Airborne Disease Transmission in Orchestras Using Computational Fluid Dynamics, 2021, Science Advances (Volume 7, number 26, eabg4511, [https://doi.org/10.1126/sciadv.abg4511](https://doi.org/10.1126/sciadv.abg4511)).
+[^hayden_karam]: Hayden A. Hedworth, M. Karam, Josh McConnell, James C. Sutherland, and Tony Saad, Mitigation Strategies for Airborne Disease Transmission in Orchestras Using Computational Fluid Dynamics, 2021, Science Advances (Volume 7, number 26, eabg4511, [https://doi.org/10.1126/sciadv.abg4511](https://doi.org/10.1126/sciadv.abg4511)).
 
 [^walker2009real]: E. Walker, The real cost of a cpu hour, Computer 42 (4) (2009) 35–41. [https://doi.org/10.1109/MC.2009.135](https://doi.org/10.1109/MC.2009.135)
 
@@ -51,4 +51,4 @@ Using the knowledge I accumulated during my doctoral research, I plan to continu
 
 [^Karam_Saad_2021]: M. Karam, T. Saad, High-order pressure estimates for projection-based navier-stokes solvers, Journal of Computational Physics (2021) 110925 [https://doi.org/10.1016/j.jcp.2021.110925](https://doi.org/10.1016/j.jcp.2021.110925).
 
-
+[^karam_saad_aiaa_2021]:  M. Karam, and T. Saad, Improvements to a Fast Projection Method for the Navier-Stokes Equations, 2021, AIAA Journal (under review).
