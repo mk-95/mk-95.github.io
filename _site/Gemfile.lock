@@ -75,6 +75,7 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
 
 PLATFORMS
+  aarch64-linux
   x86_64-linux
 
 DEPENDENCIES
@@ -83,4 +84,4 @@ DEPENDENCIES
   rake (~> 12.0)
 
 BUNDLED WITH
-   2.2.33
+   2.3.9
