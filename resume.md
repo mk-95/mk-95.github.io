@@ -61,8 +61,8 @@ using Python, Latex.
 **2021** &emsp; Tony Saad, and **Mokbel Karam**, Stable Timestep Formulas for High-Order
 Navier-Stokes Solvers, 2021, Computer and Fluids (under review).
 
-**2021** &emsp; **Mokbel Karam,** and Tony Saad, Improvements to a Fast Projection Method 
-for the Navier-Stokes Equations, 2021, AIAA Journal (under review).
+**2022** &emsp; **Mokbel Karam,** and Tony Saad, Improvements to a Fast Projection Method 
+for the Navier–Stokes Equations , 2022, AIAA Journal ([https://doi.org/10.2514/1.J061546](https://doi.org/10.2514/1.J061546)).
 
 **2021** &emsp; **Mokbel Karam,** and Tony Saad, Higher Order Pressure Approximations
 for Projection-Based Navier-Stokes Solvers, 2021, Journal of Computational
