@@ -6,6 +6,8 @@
   sublinks:
     - title: BuckinghamPy
       url: https://saadgroup.a2hosted.com/bham
+    - title: PyModPde
+      url: https://mybinder.org/v2/gh/saadgroup/PyModPDE/master?filepath=examples.ipynb
 - title: Research Statement
   url: /research_statement/
 - title: Publications

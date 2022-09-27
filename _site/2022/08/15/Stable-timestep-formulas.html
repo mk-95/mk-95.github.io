@@ -7,25 +7,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>High-order pressure estimates for projection-based Navier-Stokes solvers | Mokbel Karam</title>
+<title>Stable timestep formulas for high-order advection–diffusion and Navier–Stokes solvers | Mokbel Karam</title>
 <meta name="generator" content="Jekyll v3.9.1" />
-<meta property="og:title" content="High-order pressure estimates for projection-based Navier-Stokes solvers" />
+<meta property="og:title" content="Stable timestep formulas for high-order advection–diffusion and Navier–Stokes solvers" />
 <meta name="author" content="Mokbel Karam" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="Explaining how to construct high-order instantaneous pressures for Navier-Stokes solvers." />
-<meta property="og:description" content="Explaining how to construct high-order instantaneous pressures for Navier-Stokes solvers." />
-<link rel="canonical" href="http://localhost:4000/2022/01/01/High-order-pressure-estimates-for-navier-stokes-solvers.html" />
-<meta property="og:url" content="http://localhost:4000/2022/01/01/High-order-pressure-estimates-for-navier-stokes-solvers.html" />
+<meta name="description" content="New Stability rules for Navier-Stokes equation. No more worring about your solution blowing up!!" />
+<meta property="og:description" content="New Stability rules for Navier-Stokes equation. No more worring about your solution blowing up!!" />
+<link rel="canonical" href="http://localhost:4000/2022/08/15/Stable-timestep-formulas.html" />
+<meta property="og:url" content="http://localhost:4000/2022/08/15/Stable-timestep-formulas.html" />
 <meta property="og:site_name" content="Mokbel Karam" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-01-01T00:00:00+00:00" />
+<meta property="article:published_time" content="2022-08-15T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="High-order pressure estimates for projection-based Navier-Stokes solvers" />
+<meta property="twitter:title" content="Stable timestep formulas for high-order advection–diffusion and Navier–Stokes solvers" />
 <meta name="twitter:site" content="@mokbelkaram" />
 <meta name="twitter:creator" content="@Mokbel Karam" />
 <meta name="google-site-verification" content="u4WXQl0Eu66rsQo2kRdCNx" />
 <script type="application/ld+json">
-{"description":"Explaining how to construct high-order instantaneous pressures for Navier-Stokes solvers.","@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Mokbel Karam"},"headline":"High-order pressure estimates for projection-based Navier-Stokes solvers","dateModified":"2022-01-01T00:00:00+00:00","datePublished":"2022-01-01T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/01/01/High-order-pressure-estimates-for-navier-stokes-solvers.html"},"author":{"@type":"Person","name":"Mokbel Karam"},"url":"http://localhost:4000/2022/01/01/High-order-pressure-estimates-for-navier-stokes-solvers.html","@context":"https://schema.org"}</script>
+{"description":"New Stability rules for Navier-Stokes equation. No more worring about your solution blowing up!!","@type":"BlogPosting","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/logo.png"},"name":"Mokbel Karam"},"headline":"Stable timestep formulas for high-order advection–diffusion and Navier–Stokes solvers","dateModified":"2022-08-15T00:00:00+00:00","datePublished":"2022-08-15T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/08/15/Stable-timestep-formulas.html"},"author":{"@type":"Person","name":"Mokbel Karam"},"url":"http://localhost:4000/2022/08/15/Stable-timestep-formulas.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -169,36 +169,32 @@
 
   <header class="post-header">
 
-    <h1 class="post-title p-name" itemprop="name headline">High-order pressure estimates for projection-based Navier-Stokes solvers</h1>
-    <p class="post-meta"><time class="dt-published" datetime="2022-01-01T00:00:00+00:00" itemprop="datePublished">
-        Jan 1, 2022
+    <h1 class="post-title p-name" itemprop="name headline">Stable timestep formulas for high-order advection–diffusion and Navier–Stokes solvers</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2022-08-15T00:00:00+00:00" itemprop="datePublished">
+        Aug 15, 2022
       </time></p>
 
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Explaining how to construct high-order instantaneous pressures for Navier-Stokes solvers.</p>
+    <p>New Stability rules for Navier-Stokes equation. No more worring about your solution blowing up!!</p>
 
 <p><strong>Abstract</strong></p>
 
-<p>We derive high-order estimates of the instantaneous pressure for projection-type solvers of the incompressible Navier-Stokes equations. Projection methods play a central role in incompressible and low-Mach fluid flow simulations. However, these methods are known to produce a first-order instantaneous pressure at the end of a timestep, even when used with high-order integrators such as Runge-Kutta or Adams-Bashforth methods. In many instances, a high-order pressure is needed when the application demands it, such as turbulent aerodynamic flows, fluid-structure interaction, membrane filtration, and pressure-dependent boundary conditions. The common strategy to circumvent this limitation is to perform a so-called “post-processing” projection which results in an instantaneous pressure of the same order as the time integrator. However, this additional projection adds more cost to a simulation, especially in the context of high-performance computing. For example, in a third-order Runge-Kutta integration, requiring a post-processing projection increases the computational cost by 33%. Therefore, it is desirable to find high-order consistent estimates for the instantaneous pressure without the need for a post-processing projection. In this paper, we introduce a novel approximation to compute high-order estimates for the instantaneous pressure for arbitrary high-order time integrators, without the need for a post-processing projection. Our proposed approximations are independent of the time integration methodology or boundary conditions. We validate our results using various implicit and explicit integrators on different benchmark problems with periodic and time-dependent boundary conditions.</p>
+<p>We derive three-dimensional stable timestep formulas for high-order explicit time integration of the advection–diffusion equation. The proposed formulas cover explicit first, second, third, and fourth-order Runge–Kutta integrators in time as well as upwind, central, second-order, high-order upwind (-schemes), and flux-limiters for the advection term along with central discretization on the diffusion term. The stability rules are then compared to numerical computations of stable timesteps of the advection–diffusion equation and show excellent agreement. Finally, the formulas are implemented in a finite volume Navier–Stokes code and used to guide stable timestep selection to assess their suitability for Navier–Stokes solvers. All cases that were tested showed stable non-diverging solutions and significant improvement over common CFL-type stability specification. Despite its basis in the linear advection–diffusion equation, this work could be useful in providing a starting point for stable timestep selection for nonlinear evolutionary-type PDEs such as the Navier–Stokes equations.</p>
 
 <ul>
   <li>
-    <p>Main article in Journal of Computational Physics: <a href="https://doi.org/10.1016/j.jcp.2021.110925">https://doi.org/10.1016/j.jcp.2021.110925</a></p>
+    <p>Main article in Journal of Computer \&amp; Fluids: <a href="https://doi.org/10.1016/j.compfluid.2022.105564">https://doi.org/10.1016/j.compfluid.2022.105564</a></p>
   </li>
   <li>
-    <p>Cite as: <em>Karam, M., &amp; Saad, T. (2021). High-order pressure estimates for projection-based Navier-Stokes solvers. Journal of Computational Physics, 110925.</em></p>
+    <p>Cite as: <em>Saad, T., &amp; Karam, M. (2022). Stable timestep formulas for high-order advection–diffusion and Navier–Stokes solvers. Journal of Computers &amp; Fluids, 105564.</em></p>
   </li>
 </ul>
 
 <h3 id="explainer-video-by-prof-tony-saad">Explainer Video By Prof. Tony Saad</h3>
 <hr />
-<iframe width="700" height="450" src="https://www.youtube.com/embed/c54oATeNkdo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-
-<h3 id="summary-slides">Summary Slides</h3>
-<hr />
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSZraf11xWCun4DKR7qzeRahnBpTsP-w7d1HxCel2BK8M_3UN_kb2h_8YSxq8ROLhA9WX3PMh97efQw/embed?start=false&amp;loop=false&amp;delayms=5000" frameborder="0" width="700" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe width="700" height="450" src="https://www.youtube.com/embed/adHsFXa2qp4" title="Stable Timestep Formulas for Navier-Stokes and Advection Diffusion Solvers" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
   </div>
 
@@ -213,17 +209,22 @@
           
             <li class="post-tag">
               
-              <a href="/tags/#high-order">high-order</a>
-            </li>
-          
-            <li class="post-tag">
-              
               <a href="/tags/#navier-stokes">navier-stokes</a>
             </li>
           
             <li class="post-tag">
               
-              <a href="/tags/#projection-based-solvers">projection-based-solvers</a>
+              <a href="/tags/#stability">stability</a>
+            </li>
+          
+            <li class="post-tag">
+              
+              <a href="/tags/#adaptive-timestepping">adaptive-timestepping</a>
+            </li>
+          
+            <li class="post-tag">
+              
+              <a href="/tags/#timestep-sizes">timestep-sizes</a>
             </li>
           
         </ul>
@@ -232,20 +233,20 @@
 
     <nav class="post-pagination" role="navigation">
       
-        <a class="post-previous" href="/misc/2021/12/15/buckinghampy.html">
+        <a class="post-previous" href="/2022/04/04/Improvement-to-fast-projection.html">
           <h4 class="post-pagination-label">Prev</h4>
           <span class="post-pagination-title">
-            <i class="fas fa-arrow-left"></i> BuckinghamPy, A Python software for dimensional analysis
+            <i class="fas fa-arrow-left"></i> Improvements to a Fast Projection Method for the Navier–Stokes Equations
 
           </span>
         </a>
       
 
       
-        <a class="post-next" href="/2022/04/04/Improvement-to-fast-projection.html">
+        <a class="post-next" href="/2022/09/15/High-order-pressure-using-stage-pseudo-pressure.html">
           <h4 class="post-pagination-label">Next</h4>
           <span class="post-pagination-title">
-            Improvements to a Fast Projection Method for the Navier–Stokes Equations
+            High-order pressure estimates for Navier-Stokes Runge-Kutta solvers using stage pseudo-pressures
  <i class="fas fa-arrow-right"></i>
           </span>
         </a>

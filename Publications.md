@@ -4,9 +4,11 @@ title: Publications
 permalink: /Publications/
 ---
 
+**2022** &emsp; **Mokbel Karam**, and Tony Saad, High-order pressure estimates for Navier-Stokes Runge-Kutta solvers using stage pseudo-pressures, 2022, Journal of Computational
+Physics ([https://doi.org/10.1016/j.jcp.2022.111602](https://doi.org/10.1016/j.jcp.2022.111602)).
 
-**2021** &emsp; Tony Saad, and **Mokbel Karam**, Stable Timestep Formulas for High-Order
-Navier-Stokes Solvers, 2021, Computer and Fluids (under review).
+**2022** &emsp; Tony Saad, and **Mokbel Karam**, Stable Timestep Formulas for High-Order
+Navier-Stokes Solvers, 2022, Computer \& Fluids ([https://doi.org/10.1016/j.compfluid.2022.105564](https://doi.org/10.1016/j.compfluid.2022.105564)).
 
 **2022** &emsp; **Mokbel Karam,** and Tony Saad, Improvements to a Fast Projection Method 
 for the Navier–Stokes Equations , 2022, AIAA Journal ([https://doi.org/10.2514/1.J061546](https://doi.org/10.2514/1.J061546)).
